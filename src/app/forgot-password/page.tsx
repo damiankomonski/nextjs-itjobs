@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function ForgotPassword(){
     return (
         <div className="h-screen w-full flex items-center justify-center">
-            <div className="w-[480px] px-8 py-8">
+            <div className="w-full md:w-[480px] px-4 py-4">
                 <h1 className="h3">Zapomniałem hasła</h1>
                 <form>
                     <div className="mb-3">
