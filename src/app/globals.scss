@@ -12,10 +12,6 @@
   }
 }
 
-body{
-  font-size: 16px;
-}
-
 h1, .h1{
   font-size: 64px;
   line-height: 80px;
@@ -53,7 +49,52 @@ h6, .h6{
 }
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Helvetica, sans-serif;
+  font-size: 17px;
+}
+
+p{
+  margin-bottom: 1rem;
+}
+
+// List
+ul{
+  margin-bottom: 16px;
+
+  li{
+    margin-bottom: 4px;
+
+    &:before{
+      content: "";
+      height: 6px;
+      width: 6px;
+      background: black;
+      display: inline-block;
+      margin-right: 12px;
+      margin-left: 12px;
+      position: relative;
+      top: -3px;
+    }
+  }
+}
+
+.list-ordered-2{
+  list-style-type: none;
+
+  li{
+    &:before{
+      content: counter(item);
+      counter-increment: item;
+      width: 40px;
+      height: 40px;
+      border: 1px solid lightgrey;
+      border-radius: 100%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 16px;
+    }
+  }
 }
 
 // Buttons

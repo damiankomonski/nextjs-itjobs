@@ -9,8 +9,8 @@ export default function Header() {
                 <Link href="/" className="mt-3 inline-block me-8 font-semibold">IT</Link>
                 <nav className="inline-block mt-3">
                   <ul>
-                    <li className="inline-block"><Link href="/faq" className="mx-6">Cennik</Link></li>
-                    <li className="inline-block"><Link href="/faq" className="mx-6">Artykuły</Link></li>
+                    <li className="inline-block before:hidden"><Link href="/faq" className="mx-6">Cennik</Link></li>
+                    <li className="inline-block before:hidden"><Link href="/faq" className="mx-6">Artykuły</Link></li>
                   </ul>
                 </nav>
             </div>
