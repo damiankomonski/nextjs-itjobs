@@ -2,16 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-
-  }
-}
-
 h1, .h1{
   font-size: 64px;
   line-height: 80px;
@@ -79,12 +69,15 @@ ul{
 }
 
 .list-ordered-2{
-  list-style-type: none;
+  list-style: none; 
+  counter-reset: num; 
 
   li{
+    counter-increment: num; 
+    margin-bottom: 12px;
+
     &:before{
-      content: counter(item);
-      counter-increment: item;
+      content: counter(num) ""; 
       width: 40px;
       height: 40px;
       border: 1px solid lightgrey;
@@ -94,6 +87,12 @@ ul{
       justify-content: center;
       margin-right: 16px;
     }
+  }
+}
+
+.list-technologies{
+  li:before{
+    display: none;
   }
 }
 
@@ -124,5 +123,11 @@ ul{
     color: #000;
     font-weight: 700;
     background: none;
+  }
+}
+
+@layer base {
+  :root {
+    --radius: 0.5rem;
   }
 }

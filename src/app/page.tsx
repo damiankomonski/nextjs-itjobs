@@ -11,9 +11,9 @@ export default function Home() {
       <main>
         <section>
           <div className="container grid grid-cols-12 gap-x-6">
-            <div className="col-span-full mb-12">
+            <div className="col-span-full mb-8">
               <nav>
-                <ul className="flex">
+                <ul className="flex list-technologies">
                   <li className="me-2"><Link href="/html" className="border-2 border-black py-2 px-4 bg-black text-white font-semibold">HTML</Link></li>
                   <li className="me-2"><Link href="/html" className="border-2 border-black py-2 px-4">JS</Link></li>
                   <li className="me-2"><Link href="/html" className="border-2 border-black py-2 px-4">Java</Link></li>
@@ -32,8 +32,8 @@ export default function Home() {
               </div>
             </div>
             <div className="col-span-8">
-              {ads.map((ad) => (
-                  <article className="flex mb-4">
+              {ads.map((ad, index) => (
+                  <article className="flex mb-4" key={index}>
                   <div className="w-[56px] h-[56px] inline-block border border-gray-100">
   
                   </div>
@@ -41,11 +41,11 @@ export default function Home() {
                     <h3 className="h6 !mb-0"><Link href="/ad/65413kajsh-124124asfas">Front End Engineer</Link></h3>
                     <div className="flex">
                       <div className="me-4">
-                        <img src="" alt="" />
+                        <img src={undefined} alt="" />
                         <p>Allegro</p>
                       </div>
                       <div className="me-4">
-                        <img src="" alt="" />
+                        <img src={undefined} alt="" />
                         <p>Warszawa</p>
                       </div>
                     </div>
@@ -55,6 +55,10 @@ export default function Home() {
                   </div>
                 </article>
                 ))}
+
+              <div>
+
+              </div>
             </div>
           </div>
         </section>
