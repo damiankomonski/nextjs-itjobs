@@ -96,6 +96,18 @@ ul{
   }
 }
 
+.list-profile-nav{
+  margin-top: 8px;
+
+  li{
+    margin-bottom: 24px;
+  }
+
+  li:before{
+    display: none;
+  }
+}
+
 // Buttons
 .btn{
   padding: 12px 24px;
