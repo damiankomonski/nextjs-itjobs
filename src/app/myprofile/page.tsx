@@ -23,17 +23,17 @@ export default function MyProfile(){
             <main>
                 <div className="container">
                     <div className="grid grid-cols-12 gap-x-6">
-                        <aside className="col-span-3">
+                        <aside className="col-span-full md:col-span-3 mb-8">
                             <nav className="mt-8">
                                 <ul className="list-profile-nav">
-                                    <li><Link href="/myprofile" className="font-bold">Profil</Link></li>
+                                    <li><Link href="/myprofile">Profil</Link></li>
                                     <li><Link href="/payments">Płatności</Link></li>
                                     <li><Link href="/settings">Ustawienia</Link></li>
                                     <li><Link href="/dataexport">Eksport danych</Link></li>
                                 </ul>
                             </nav>
                         </aside>     
-                        <section className="col-span-9">
+                        <section className="col-span-full md:col-span-9">
                             <h1 className="h2 mt-4 block">Profil</h1>
                             <div className="flex py-8">
                                 <img src={undefined} alt="" className="w-[64px] h-[64px] bg-gray-100 rounded-full" />
@@ -45,7 +45,7 @@ export default function MyProfile(){
                             <div className="mb-12">
                                 <div className="mb-4">
                                     <p className="mb-2">Adres email</p>
-                                    <p className="font-semibold">allegro@allegro.pl</p>
+                                    <p className="mb-6">allegro@allegro.pl</p>
                                 </div>
                                 <form action="">
                                     <div className="mb-3">
