@@ -14,8 +14,9 @@ export default function Home() {
             <div className="col-span-full mb-8">
               <nav>
                 <ul className="flex list-technologies">
-                  <li className="me-2"><Link href="/html" className="border-2 border-black py-2 px-4 bg-black text-white font-semibold">HTML</Link></li>
-                  <li className="me-2"><Link href="/html" className="border-2 border-black py-2 px-4">JS</Link></li>
+                  <li className="me-2"><Link href="/html" className="border-2 border-black py-2 px-4 bg-black text-white font-semibold">AI</Link></li>
+                  <li className="me-2"><Link href="/html" className="border-2 border-black py-2 px-4">HTML</Link></li>
+                  <li className="me-2"><Link href="/html" className="border-2 border-black py-2 px-4">Typescript</Link></li>
                   <li className="me-2"><Link href="/html" className="border-2 border-black py-2 px-4">Java</Link></li>
                   <li className="me-2"><Link href="/html" className="border-2 border-black py-2 px-4">Python</Link></li>
                   <li className="me-2"><Link href="/html" className="border-2 border-black py-2 px-4">C#</Link></li>

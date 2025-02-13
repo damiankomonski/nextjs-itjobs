@@ -30,7 +30,10 @@ export default {
   			},
   			primary: {
   				'500': '#000000'
-  			}
+  			},
+			error: {
+				'500': '#bf382e'
+			}
   		},
   		borderRadius: {
   			lg: 'var(--radius)',

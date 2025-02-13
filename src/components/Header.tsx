@@ -28,8 +28,8 @@ export default function Header() {
                 <DropdownMenu>
                   <DropdownMenuTrigger className="me-4">Twoje konto</DropdownMenuTrigger>
                   <DropdownMenuContent>
-                    <DropdownMenuItem className="!text-base"><Link href="/myads" className="w-full">Moje ogłoszenia</Link></DropdownMenuItem>
-                    <DropdownMenuItem className="!text-base"><Link href="/myprofile" className="w-full">Profil</Link></DropdownMenuItem>
+                    <DropdownMenuItem className="!text-base"><Link href="/my-ads" className="w-full">Moje ogłoszenia</Link></DropdownMenuItem>
+                    <DropdownMenuItem className="!text-base"><Link href="/my-profile" className="w-full">Profil</Link></DropdownMenuItem>
                     <DropdownMenuItem className="!text-base"><Link href="/payments" className="w-full">Płatności</Link></DropdownMenuItem>
                     <DropdownMenuItem className="!text-base"><Link href="/settings" className="w-full">Ustawienia</Link></DropdownMenuItem>
                   </DropdownMenuContent>

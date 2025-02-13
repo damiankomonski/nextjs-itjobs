@@ -30,19 +30,20 @@ export default function Payments(){
                 <div className="container">
                     <div className="grid grid-cols-12 gap-x-6">
                         <aside className="col-span-full md:col-span-3 mb-8">
-                            <nav className="mt-8">
+                            <h3 className="text-[13px] uppercase text-gray-500 mt-4 mb-0 tracking-widest">Menu</h3>
+                            <nav className="">
                                 <ul className="list-profile-nav">
-                                    <li><Link href="/myprofile">Profil</Link></li>
+                                    <li><Link href="/my-profile">Profil</Link></li>
                                     <li><Link href="/payments">Płatności</Link></li>
                                     <li><Link href="/settings">Ustawienia</Link></li>
-                                    <li><Link href="/dataexport">Eksport danych</Link></li>
+                                    <li><Link href="/data-export">Eksport danych</Link></li>
                                 </ul>
                             </nav>
                         </aside>     
                         <section className="col-span-full md:col-span-9">
                             <h1 className="h2 mt-4 block">Płatności</h1>
                             <div>
-                                <Table className="!text-base">
+                                <Table className="text-base">
                                     <TableHeader>
                                         <TableRow>
                                             <TableHead className="">Numer płatności</TableHead>
