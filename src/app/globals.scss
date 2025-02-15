@@ -41,6 +41,7 @@ h6, .h6{
 body {
   font-family: Helvetica, sans-serif;
   font-size: 17px;
+  letter-spacing: 0.2px;
   line-height: 28px;
 }
 
@@ -111,9 +112,10 @@ ul{
 
 // Buttons
 .btn{
-  padding: 12px 24px;
+  padding: 10px 24px;
   display: inline-block;
   text-align: center;
+  border-radius: 4px;
 
   img{
     display: inline-block;
@@ -124,6 +126,8 @@ ul{
     color: #ffffff;
     font-weight: 600;
     transition: background 0.3s ease-in-out;
+    box-shadow: 2px 2px 4px rgba(0,0,0,0.15);
+    
 
     &:hover{
       background: #000;
@@ -161,4 +165,108 @@ ul{
 
 .css-hlgwow{
   padding: 6px 8px !important;
+}
+
+
+// Pagination
+.pagination{
+  display: flex;
+  margin-bottom: 16px;
+
+    .page-item{
+      margin: 0 12px;
+
+      &:before{
+        display: none;
+      }
+
+        .page-link{
+            border: none;
+            color: #000;
+
+            &:hover{
+                background: none;
+            }
+
+            &:focus{
+                box-shadow: none;
+            }
+        }
+    }
+
+    .page-item.active{
+      .page-link{
+          color: #ffffff;
+          padding: 8px 8px;
+          background: #000;
+      }
+    }
+
+    .link-previous.disabled{
+        .link-previous-link{
+            background: none;
+            color: #000;
+
+            &:hover{
+                cursor: default;
+            }
+        }
+    }
+
+    .link-next.disabled{
+        .link-next-link{
+            background: none;
+            color: #000;
+
+            &:hover{
+                cursor: default;
+            }
+        }
+    }
+
+    .link-previous{
+      display: none;
+
+      @media (min-width: 640px){
+        display: block;
+      }
+
+      &:before{
+        display: none;
+      }
+
+        .link-previous-link{
+            margin-right: 32px;
+            text-decoration: none;
+            color: #000;
+            display: block;
+
+            &:focus{
+                box-shadow: none;
+            }
+        }
+    }
+
+    .link-next{
+      display: none;
+
+      @media (min-width: 640px){
+        display: block;
+      }
+
+      &:before{
+        display: none;
+      }
+
+        .link-next-link{
+            margin-left: 32px;
+            text-decoration: none;
+            color: #000;
+            display: block;
+
+            &:focus{
+                box-shadow: none;
+            }
+        }
+    }
 }
