@@ -1,6 +1,7 @@
 "use client"
 
-import { ColumnDef, flexRender, getCoreRowModel, useReactTable, getPaginationRowModel, ColumnFiltersState, getFilteredRowModel } from "@tanstack/react-table";
+import * as React from "react";
+import { ColumnDef, SortingState, flexRender, getCoreRowModel, useReactTable, getPaginationRowModel, ColumnFiltersState, getFilteredRowModel, getSortedRowModel } from "@tanstack/react-table";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -11,15 +12,39 @@ interface DataTableProps<TData, TValue> {
 }
 
 export function DataTable<TData, TValue>({columns, data}: DataTableProps<TData, TValue>) {
+    const [sorting, setSorting] = React.useState<SortingState>([]);
+    const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>([]);
     const table = useReactTable({
         data,
         columns,
         getCoreRowModel: getCoreRowModel(),
         getPaginationRowModel: getPaginationRowModel(),
-    })
+        onSortingChange: setSorting,
+        getSortedRowModel: getSortedRowModel(),
+        onColumnFiltersChange: setColumnFilters,
+        getFilteredRowModel: getFilteredRowModel(),
+        state: {
+            sorting,
+            columnFilters
+        },
+    });
 
   return (
     <div>
+        <div className="md:flex items-center justify-between py-4">
+            <Input
+                placeholder="Szukaj po email..."
+                value={(table.getColumn("email")?.getFilterValue() as string) ?? ""}
+                onChange={(event) =>
+                    table.getColumn("email")?.setFilterValue(event.target.value)
+                }
+                className="max-w-sm"
+            />
+
+            <div className="mt-4 md:mt-0">
+                <Button className="btn btn-primary ">Pobierz wszystkie</Button>
+            </div>
+        </div>
         <div className="rounded-md border">
             <Table>
                 <TableHeader>
@@ -57,9 +82,9 @@ export function DataTable<TData, TValue>({columns, data}: DataTableProps<TData, 
                     ))
                 ) : (
                     <TableRow>
-                    <TableCell colSpan={columns.length} className="h-24 text-center">
-                        Brak rezultatów
-                    </TableCell>
+                        <TableCell colSpan={columns.length} className="h-24 text-center">
+                            Brak rezultatów
+                        </TableCell>
                     </TableRow>
                 )}
                 </TableBody>

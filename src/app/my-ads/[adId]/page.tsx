@@ -7,7 +7,7 @@ import Select from "react-select";
 import ReactPaginate from 'react-paginate';
 import { DataTable } from "./data-table";
 import { ColumnDef } from "@tanstack/react-table";
-import { MoreHorizontal } from "lucide-react";
+import { MoreHorizontal, ArrowUpDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -28,53 +28,123 @@ type Resume = {
     name: string
     surname: string
     email: string
-    more: string
 }
 
 const resumes: Resume[] = [
     {
-        id: "728ed52f",
-        name: "Jan",
-        surname: "Kowalski",
-        email: "jankowalski@gmail.com"
+        id: "a1b2c3d4",
+        name: "Adam",
+        surname: "Nowak",
+        email: "adam.nowak@gmail.com"
     },
     {
-        id: "489e1d42",
-        name: "Renata",
-        surname: "Bubu",
-        email: "renata@gmail.com"
+        id: "e5f6g7h8",
+        name: "Ewa",
+        surname: "Kowalczyk",
+        email: "ewa.kowalczyk@gmail.com"
+    },
+    {
+        id: "i9j0k1l2",
+        name: "Michał",
+        surname: "Wiśniewski",
+        email: "michal.wisniewski@gmail.com"
+    },
+    {
+        id: "m3n4o5p6",
+        name: "Karolina",
+        surname: "Dąbrowska",
+        email: "karolina.dabrowska@gmail.com"
+    },
+    {
+        id: "q7r8s9t0",
+        name: "Tomasz",
+        surname: "Lewandowski",
+        email: "tomasz.lewandowski@gmail.com"
+    },
+    {
+        id: "u1v2w3x4",
+        name: "Magdalena",
+        surname: "Zielińska",
+        email: "magdalena.zielinska@gmail.com"
+    },
+    {
+        id: "y5z6a7b8",
+        name: "Piotr",
+        surname: "Szymański",
+        email: "piotr.szymanski@gmail.com"
+    },
+    {
+        id: "c9d0e1f2",
+        name: "Aleksandra",
+        surname: "Wójcik",
+        email: "aleksandra.wojcik@gmail.com"
+    },
+    {
+        id: "g3h4i5j6",
+        name: "Krzysztof",
+        surname: "Kamiński",
+        email: "krzysztof.kaminski@gmail.com"
+    },
+    {
+        id: "k7l8m9n0",
+        name: "Natalia",
+        surname: "Jankowska",
+        email: "natalia.jankowska@gmail.com"
+    },
+    {
+        id: "o1p2q3r4",
+        name: "Bartosz",
+        surname: "Mazur",
+        email: "bartosz.mazur@gmail.com"
     }
 ];
 
 const columns: ColumnDef<Resume>[] = [
     {
         accessorKey: "name",
-        header: "Imię",
+        header: ({ column }) => {
+            return (
+                <Button variant="ghost" onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}>Imię <ArrowUpDown className="ml-2 h-4 w-4" /></Button>
+            )
+        },
     },
     {
         accessorKey: "surname",
-        header: "Nazwisko",
+        header: ({ column }) => {
+            return (
+                <Button variant="ghost" onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}>Nazwisko <ArrowUpDown className="ml-2 h-4 w-4" /></Button>
+            )
+        },
     },
     {
         accessorKey: "email",
-        header: "Adres email",
+        header: ({ column }) => {
+            return (
+                <Button variant="ghost" onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}>Email <ArrowUpDown className="ml-2 h-4 w-4" /></Button>
+            )
+        },
     },
     {
         id: "more",
         cell: ({ row }) => {
+            const resume = row.original;
+
             return (
-                <DropdownMenu>
-                    <DropdownMenuTrigger asChild>
-                    <Button variant="ghost" className="h-8 w-8 p-0">
-                        <span className="sr-only">Open menu</span>
-                        <MoreHorizontal className="h-4 w-4" />
-                    </Button>
-                    </DropdownMenuTrigger>
-                    <DropdownMenuContent align="end">
-                        <DropdownMenuItem>Pobierz CV</DropdownMenuItem>
-                    </DropdownMenuContent>
-            </DropdownMenu>
-              )
+                <div className="flex">
+                    <Link href="" className="btn btn-secondary btn-sm me-4">Pobierz CV</Link>
+                    <DropdownMenu>
+                        <DropdownMenuTrigger asChild>
+                            <Button variant="ghost" className="h-8 w-8 p-0 mt-1 me-4">
+                                <span className="sr-only">Otwórz menu</span>
+                                <MoreHorizontal className="h-4 w-4" />
+                            </Button>
+                        </DropdownMenuTrigger>
+                        <DropdownMenuContent align="end">
+                            <DropdownMenuItem>Pobierz CV</DropdownMenuItem>
+                        </DropdownMenuContent>
+                    </DropdownMenu>
+                </div>
+            )
         }
     },
 ];

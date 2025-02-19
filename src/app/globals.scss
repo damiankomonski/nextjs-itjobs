@@ -112,10 +112,10 @@ ul{
 
 // Buttons
 .btn{
-  padding: 10px 24px;
   display: inline-block;
   text-align: center;
   border-radius: 4px;
+  padding: 10px 24px;
 
   img{
     display: inline-block;
@@ -136,7 +136,7 @@ ul{
 
   &-secondary{
     border: 2px solid #000;
-    border-radius: 1rem;
+    border-radius: 4px;
     color: #000;
     font-weight: 700;
     background: none;
