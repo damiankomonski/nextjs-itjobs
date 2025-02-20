@@ -28,8 +28,22 @@ export default function AddAd(){
                             <div className="col-span-full md:col-span-9 mb-4">
                                 <h1 className="h2 mt-4">Dodaj ogłoszenie</h1>
                             </div> 
-                            <div className="col-span-full md:col-span-full">
-                                
+                            <div className="col-span-full md:col-span-8">
+                                <div>
+                                    <p className="w-full mb-2 block text-black">Kategoria</p>
+                                    <div className="flex items-center space-x-2">
+                                        <input type="radio" id="html" name="fav_language" value="HTML" />
+                                        <label className="">Adres email</label>
+                                    </div>
+
+                                    <label htmlFor="" className="">
+                                        <input type="radio" name="radio" /> Radio
+                                    </label>
+                                </div>
+                                <div className="mb-3">
+                                    <label className="w-full mb-2 block text-black">Adres email</label>
+                                    <input className="w-full border border-2 border-black py-[10px] px-3 focus:outline-none focus:border-black" placeholder="Adres email" />
+                                </div>
                             </div>
                         </div>
                     </div>
