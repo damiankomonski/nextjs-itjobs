@@ -38,7 +38,6 @@ export default function Page({params}: {params: Promise<ParamsType>}){
                                 </div>
                             </div>
                             <div className="mb-4">
-                                <p className="text-sm mb-0">Wynagrodzenie</p>
                                 <h2 className="h4">4000 - 6000zł <span className="text-[18px]">brutto</span></h2>
                                 {/* <Link href="" className="btn btn-primary w-full mt-[-8px]">Aplikuj</Link> */}
                             </div>
@@ -46,30 +45,30 @@ export default function Page({params}: {params: Promise<ParamsType>}){
                                 <div>
                                     <img src={undefined} alt="" />
                                     <p className="mb-1 text-sm">Wymiar pracy</p>
-                                    <p className="text-[18px]">Pełny etat</p>
+                                    <p className="text-[18px] text-black-500">Pełny etat</p>
                                 </div>
                                 <div>
                                     <img src={undefined} alt="" />
                                     <p className="mb-1 text-sm">Doświadczenie</p>
-                                    <p className="text-[18px]">Mid</p>
+                                    <p className="text-[18px] text-black-500">Mid</p>
                                 </div>
                                 <div>
                                     <img src={undefined} alt="" />
                                     <p className="mb-1 text-sm">Rodzaj umowy</p>
-                                    <p className="text-[18px]">Umowa o pracę, B2B</p>
+                                    <p className="text-[18px] text-black-500">Umowa o pracę, B2B</p>
                                 </div>
                                 <div>
                                     <img src={undefined} alt="" />
                                     <p className="mb-1 text-sm">Miejsce pracy</p>
-                                    <p className="text-[18px]">Hybrydowo, Zdalnie</p>
+                                    <p className="text-[18px] text-black-500">Hybrydowo, Zdalnie</p>
                                 </div>
                             </div>
                             <div className="mb-12">
                                 <h2 className="h4">Technologie</h2>
                                 <div>
-                                    <span className="border border-gray-100 py-2 px-4 me-4">Typescript</span>
-                                    <span className="border border-gray-100 py-2 px-4 me-4">Angular</span>
-                                    <span className="border border-gray-100 py-2 px-4 me-4">Angular Material</span>
+                                    <span className="border border-gray-100 py-2 px-4 me-4 rounded-[4px] inline-block">Typescript</span>
+                                    <span className="border border-gray-100 py-2 px-4 me-4 rounded-[4px] inline-block">Angular</span>
+                                    <span className="border border-gray-100 py-2 px-4 me-4 rounded-[4px] inline-block">Angular Material</span>
                                 </div>
                             </div>
                             <div className="mt-12 mb-8">
