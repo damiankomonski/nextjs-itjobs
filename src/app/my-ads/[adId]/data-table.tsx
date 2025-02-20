@@ -14,6 +14,7 @@ interface DataTableProps<TData, TValue> {
 export function DataTable<TData, TValue>({columns, data}: DataTableProps<TData, TValue>) {
     const [sorting, setSorting] = React.useState<SortingState>([]);
     const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>([]);
+    const [rowSelection, setRowSelection] = React.useState({});
     const table = useReactTable({
         data,
         columns,
@@ -22,10 +23,12 @@ export function DataTable<TData, TValue>({columns, data}: DataTableProps<TData, 
         onSortingChange: setSorting,
         getSortedRowModel: getSortedRowModel(),
         onColumnFiltersChange: setColumnFilters,
-        getFilteredRowModel: getFilteredRowModel(),
+        getFilteredRowModel: getFilteredRowModel(), 
+        onRowSelectionChange: setRowSelection, 
         state: {
             sorting,
-            columnFilters
+            columnFilters, 
+            rowSelection
         },
     });
 
@@ -91,9 +94,18 @@ export function DataTable<TData, TValue>({columns, data}: DataTableProps<TData, 
             </Table>
         </div>
 
-        <div className="flex items-center justify-end space-x-2 py-4">
-            <Button variant="outline" size="sm" onClick={() => table.previousPage()} disabled={!table.getCanPreviousPage()}>Wstecz</Button>
-            <Button variant="outline" size="sm" onClick={() => table.nextPage()} disabled={!table.getCanNextPage()}>Dalej</Button>
+        <div className="flex justify-between space-x-2 py-4">
+            <div>
+                <div className="flex-1 text-sm text-muted-foreground">
+                    {table.getFilteredSelectedRowModel().rows.length} z{" "}
+                    {table.getFilteredRowModel().rows.length} zaznaczonych wierszy.
+                </div>
+            </div>
+
+            <div>
+                <Button className="me-4" variant="outline" size="sm" onClick={() => table.previousPage()} disabled={!table.getCanPreviousPage()}>Wstecz</Button>
+                <Button className="" variant="outline" size="sm" onClick={() => table.nextPage()} disabled={!table.getCanNextPage()}>Dalej</Button>
+            </div>
         </div>
     </div>
   )

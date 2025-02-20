@@ -7,8 +7,9 @@ import Select from "react-select";
 import ReactPaginate from 'react-paginate';
 import { DataTable } from "./data-table";
 import { ColumnDef } from "@tanstack/react-table";
-import { MoreHorizontal, ArrowUpDown } from "lucide-react";
+import { MoreHorizontal, ArrowUpDown, MoveLeft, ChartBarStacked, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Checkbox } from "@/components/ui/checkbox";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -101,6 +102,24 @@ const resumes: Resume[] = [
 
 const columns: ColumnDef<Resume>[] = [
     {
+        id: "select",
+        header: ({ table }) => (
+          <Checkbox
+            checked={
+              table.getIsAllPageRowsSelected() ||
+              (table.getIsSomePageRowsSelected() && "indeterminate")
+            }
+            onCheckedChange={(value) => table.toggleAllPageRowsSelected(!!value)}
+            aria-label="Select all"
+          />
+        ),
+        cell: ({ row }) => (
+            <Checkbox checked={row.getIsSelected()} onCheckedChange={(value) => row.toggleSelected(!!value)} aria-label="Select row" />
+        ),
+        enableSorting: false,
+        enableHiding: false,
+    },
+    {
         accessorKey: "name",
         header: ({ column }) => {
             return (
@@ -140,7 +159,8 @@ const columns: ColumnDef<Resume>[] = [
                             </Button>
                         </DropdownMenuTrigger>
                         <DropdownMenuContent align="end">
-                            <DropdownMenuItem>Pobierz CV</DropdownMenuItem>
+                            <DropdownMenuItem>Pobierz</DropdownMenuItem>
+                            <DropdownMenuItem className="text-error-500">Usuń</DropdownMenuItem>
                         </DropdownMenuContent>
                     </DropdownMenu>
                 </div>
@@ -160,13 +180,13 @@ export default function MyAdsDetails({params}: {params: Promise<ParamsType>}){
                     <div className="container">
                         <div className="grid grid-cols-12 gap-x-6">
                             <div className="col-span-full md:col-span-9">
-                                <Link href="/my-ads/" className="underline inline-block mb-4">Powrót do ogłoszeń</Link>
+                                <Link href="/my-ads/" className="underline mb-4 flex"><MoveLeft className="me-4" /> Powrót do ogłoszeń</Link>
                                 <h1 className="h2 mt-4 !mb-4">Front End Engineer</h1>
                             </div> 
                             <div className="col-span-full md:col-span-full mb-8">
                                 <div className="flex">
-                                    <p className="me-4">Javascript</p>
-                                    <p className="me-4">Warszawa, Mazowieckie</p>
+                                    <p className="me-4 flex"><ChartBarStacked className="me-2" /> Javascript</p>
+                                    <p className="me-4 flex"><MapPin className="me-2" /> Warszawa, Mazowieckie</p>
                                 </div>
                             </div>
                             <div className="col-span-full">

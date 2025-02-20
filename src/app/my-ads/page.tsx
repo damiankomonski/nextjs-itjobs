@@ -13,6 +13,7 @@ import Select from "react-select";
     TabsTrigger,
   } from "@/components/ui/tabs";
 import ReactPaginate from 'react-paginate';
+import {MapPin, CalendarDays, ChartBarStacked} from "lucide-react";
 
 export default function MyAds(){
     const [currentPage, setCurrentPage] = useState<number>(0);
@@ -37,11 +38,11 @@ export default function MyAds(){
                                         <article className="border border-1 border-gray-100 rounded-lg py-4 px-6 w-full relative mb-4">
                                             <div className="flex justify-between">
                                                 <div>
-                                                    <h2 className="h4 !mb-0"><Link href="/my-ads/asj239857sjfdh">Front End Engineer</Link></h2>
+                                                    <h2 className="h4 !mb-2"><Link href="/my-ads/asj239857sjfdh">Front End Engineer</Link></h2>
                                                     <div className="flex">
-                                                        <p className="text-[15px] me-8">Javascript</p>
-                                                        <p className="text-[15px] me-8">Warszawa, Mazowieckie</p>
-                                                        <p className="text-[15px] me-8">Aktywne do 7 Luty 2025</p>
+                                                        <p className="text-[15px] me-4 flex"><ChartBarStacked className="me-2" /> Javascript</p>
+                                                        <p className="text-[15px] me-4 flex"><MapPin className="me-2" /> Warszawa, Mazowieckie</p>
+                                                        <p className="text-[15px] me-4 flex"><CalendarDays className="me-2" /> Aktywne do 7 Luty 2025</p>
                                                     </div>
                                                 </div>
                                                 <div>
