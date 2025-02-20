@@ -33,9 +33,6 @@ export default {
   			},
 			error: {
 				'500': '#bf382e'
-			},
-			black: {
-				'500': "#000000"
 			}
   		},
   		borderRadius: {
