@@ -121,8 +121,8 @@ ul{
 .btn{
   display: inline-block;
   text-align: center;
-  border-radius: 4px;
-  padding: 10px 24px;
+  padding: 8px 12px;
+  // border-radius: 12px;
 
   img{
     display: inline-block;
@@ -133,7 +133,7 @@ ul{
     color: #ffffff;
     font-weight: 600;
     transition: background 0.3s ease-in-out;
-    box-shadow: 2px 2px 4px rgba(0,0,0,0.15);
+    // box-shadow: 2px 2px 4px rgba(0,0,0,0.15);
     
 
     &:hover{
@@ -143,9 +143,9 @@ ul{
 
   &-secondary{
     border: 2px solid #000;
-    border-radius: 4px;
     color: #000;
-    font-weight: 700;
+    // font-weight: 700;
+    border-radius: 8px;
     background: none;
   }
 }

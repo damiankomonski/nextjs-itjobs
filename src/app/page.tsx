@@ -9,30 +9,30 @@ export default function Home() {
     <>
       <Header />
       <main>
-        <section>
+        <section className="py-4">
           <div className="container grid grid-cols-12 gap-x-6">
             <div className="col-span-full mb-8">
               <nav>
                 <ul className="flex list-technologies">
-                  <li className="me-2"><Link href="/html" className="border-2 border-black py-2 px-4 bg-black text-white font-semibold rounded-[4px]">AI</Link></li>
-                  <li className="me-2"><Link href="/html" className="border-2 border-black py-2 px-4 rounded-[4px]">HTML</Link></li>
-                  <li className="me-2"><Link href="/html" className="border-2 border-black py-2 px-4 rounded-[4px]">Typescript</Link></li>
-                  <li className="me-2"><Link href="/html" className="border-2 border-black py-2 px-4 rounded-[4px]">Java</Link></li>
-                  <li className="me-2"><Link href="/html" className="border-2 border-black py-2 px-4 rounded-[4px]">Python</Link></li>
-                  <li className="me-2"><Link href="/html" className="border-2 border-black py-2 px-4 rounded-[4px]">C#</Link></li>
-                  <li className="me-2"><Link href="/html" className="border-2 border-black py-2 px-4 rounded-[4px]">Ruby</Link></li>
-                  <li className="me-2"><Link href="/html" className="border-2 border-black py-2 px-4 rounded-[4px]">PHP</Link></li>
-                  <li className="me-2"><Link href="/html" className="border-2 border-black py-2 px-4 rounded-[4px]">Swift</Link></li>
-                  <li className="me-2"><Link href="/html" className="border-2 border-black py-2 px-4 rounded-[4px]">Flutter</Link></li>
-                  <li className="me-2"><Link href="/html" className="border-2 border-black py-2 px-4 rounded-[4px]">C</Link></li>
-                  <li className="me-2"><Link href="/html" className="border-2 border-black py-2 px-4 rounded-[4px]">Go</Link></li>
+                  <li className="me-2"><Link href="/html" className="border-2 border-black py-2 px-4 bg-black text-white font-semibold">AI</Link></li>
+                  <li className="me-2"><Link href="/html" className="border-2 border-black py-2 px-4">HTML</Link></li>
+                  <li className="me-2"><Link href="/html" className="border-2 border-black py-2 px-4">Typescript</Link></li>
+                  <li className="me-2"><Link href="/html" className="border-2 border-black py-2 px-4">Java</Link></li>
+                  <li className="me-2"><Link href="/html" className="border-2 border-black py-2 px-4">Python</Link></li>
+                  <li className="me-2"><Link href="/html" className="border-2 border-black py-2 px-4">C#</Link></li>
+                  <li className="me-2"><Link href="/html" className="border-2 border-black py-2 px-4">Ruby</Link></li>
+                  <li className="me-2"><Link href="/html" className="border-2 border-black py-2 px-4">PHP</Link></li>
+                  <li className="me-2"><Link href="/html" className="border-2 border-black py-2 px-4">Swift</Link></li>
+                  <li className="me-2"><Link href="/html" className="border-2 border-black py-2 px-4">Flutter</Link></li>
+                  <li className="me-2"><Link href="/html" className="border-2 border-black py-2 px-4">C</Link></li>
+                  <li className="me-2"><Link href="/html" className="border-2 border-black py-2 px-4">Go</Link></li>
                 </ul>
               </nav>
               <div>
                 {/* <Image src="/images/icon-nav.svg" width={32} height={32} alt="More categories" className="ms-2 -mt-1" /> */}
               </div>
             </div>
-            <div className="col-span-8">
+            <div className="col-span-full">
               {ads.map((ad, index) => (
                   <article className="flex mb-4" key={index}>
                   <div className="w-[56px] h-[56px] inline-block border border-gray-100">
