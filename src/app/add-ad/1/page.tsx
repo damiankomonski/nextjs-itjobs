@@ -1,36 +1,30 @@
 "use client"
 
-import { useEffect, useState } from "react";
-import Header from "@/components/Header";
 import Link from "next/link";
+import { useEffect, useState } from "react";
+import Select from "react-select";
+
+import Header from "@/components/Header";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Checkbox } from "@/components/ui/checkbox"
 import {
-  Field,
-  FieldDescription,
-  FieldGroup,
-  FieldLabel,
-  FieldLegend,
-  FieldSet,
+    Field,
+    FieldDescription,
+    FieldGroup,
+    FieldLabel,
+    FieldLegend,
+    FieldSet,
 } from "@/components/ui/field"
-import Select from "react-select";
-  import {
-    Tabs,
-    TabsContent,
-    TabsList,
-    TabsTrigger,
-  } from "@/components/ui/tabs";
-import ReactPaginate from 'react-paginate';
-import {MapPin, CalendarDays, ChartBarStacked} from "lucide-react";
+import Tiptap from "@/components/Tiptap";
 
 type select_option = {
     value: string,
     label: string
 }
 
-export default function AddAd(){
+export default function AddAd1(){
     const cities: select_option[] = [
         {value: "warszawa", label: "Warszawa"},
         {value: "krakow", label: "Kraków"}
@@ -58,7 +52,25 @@ export default function AddAd(){
     ];
 
     const [currentPage, setCurrentPage] = useState<number>(0);
+    const [editorContent, setEditorContent] = useState('');
+    const [recruitmentSteps, setRecruitmentSteps] = useState<string[]>(['']);
+    const [salaryValues, setSalaryValues] = useState([0, 50000]);
 
+    const handleEditorChange = (content: string) => {
+        setEditorContent(content);
+    };
+
+    const handleAddRecruitmentStep = () => {
+        setRecruitmentSteps((prev) => [...prev, '']);
+    };
+
+    const handleRecruitmentStepChange = (index: number, value: string) => {
+        setRecruitmentSteps((prev) => {
+            const next = [...prev];
+            next[index] = value;
+            return next;
+        });
+    };
 
     return (
         <>
@@ -226,12 +238,32 @@ export default function AddAd(){
 
                                         <div className="mb-3">
                                             <label className="w-full mb-2 block text-black">Opis</label>
-                                            wyiswg editor
+                                            <Tiptap />
                                         </div>
 
                                         <div className="mb-3">
                                             <label className="w-full mb-2 block text-black">Proces rekrutacji</label>
-                                            
+                                            <div className="space-y-2">
+                                                {recruitmentSteps.map((step, index) => (
+                                                    <input
+                                                        key={index}
+                                                        type="text"
+                                                        className="w-full border border-2 border-black py-[.625rem] px-3 focus:outline-none focus:border-black"
+                                                        placeholder={`Krok ${index + 1}`}
+                                                        value={step}
+                                                        onChange={(e) =>
+                                                            handleRecruitmentStepChange(index, e.target.value)
+                                                        }
+                                                    />
+                                                ))}
+                                            </div>
+                                            <button
+                                                type="button"
+                                                onClick={handleAddRecruitmentStep}
+                                                className="mt-2 inline-flex items-center px-4 py-2 border border-black text-sm font-medium bg-white hover:bg-gray-100 transition-colors"
+                                            >
+                                                Dodaj kolejny krok
+                                            </button>
                                         </div>
                                     </div>
 

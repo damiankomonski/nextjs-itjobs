@@ -30,33 +30,7 @@ type select_option = {
     label: string
 }
 
-export default function AddAdPayment(){
-    const cities: select_option[] = [
-        {value: "warszawa", label: "Warszawa"},
-        {value: "krakow", label: "Kraków"}
-    ];
-
-    const experience_options: select_option[] = [
-        {value: "junior", label: "Junior"},
-        {value: "mid", label: "Mid"}
-    ];
-
-    const wymiar_pracy_options: select_option[] = [
-        {value: "pelny-etat", label: "Pełny etat"},
-        {value: "pol-etatu", label: "Pół etatu"}
-    ];
-
-    const rodzaj_umowy_options: select_option[] = [
-        {value: "umowa-o-prace", label: "Umowa o pracę"},
-        {value: "b2b", label: "B2B"}
-    ];
-
-    const miejsce_pracy_options: select_option[] = [
-        {value: "na-miejscu", label: "Na miejscu"},
-        {value: "hybrydowo", label: "Hybrydowo"}, 
-        {value: "zdalnie", label: "Zdalnie"}
-    ];
-
+export default function AddAd2(){
     const [currentPage, setCurrentPage] = useState<number>(0);
 
 

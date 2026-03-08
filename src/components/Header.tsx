@@ -36,7 +36,7 @@ export default function Header() {
                   </DropdownMenuContent>
                 </DropdownMenu>
                 {/* <Link href="/login" className="me-4 mt-3">Zaloguj się</Link> */}
-                <Link href="/add-ad" className="btn btn-primary">Dodaj ogłoszenie</Link>
+                <Link href="/add-ad/1" className="btn btn-primary">Dodaj ogłoszenie</Link>
               </div>
             </div>
         </div>
