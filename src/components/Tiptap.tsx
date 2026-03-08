@@ -1,11 +1,11 @@
-// "use client"
+// https://codesandbox.io/p/sandbox/tiptap-react-ts-simple-text-editor-hcyp3l?file=%2Fsrc%2FSimpleEditor.tsx%3A20%2C33
 // import './styles.scss'
 
 import { EditorContent, useEditor } from '@tiptap/react'
 import StarterKit from '@tiptap/starter-kit'
 import React from 'react'
 
-const MenuBar = ({ editor }: { editor: any }) => {
+const MenuBar = ({ editor }: {editor: any}) => {
   if (!editor) {
     return null
   }
