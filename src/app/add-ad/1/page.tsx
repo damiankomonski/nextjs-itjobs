@@ -6,8 +6,6 @@ import Select from "react-select";
 
 import Header from "@/components/Header";
 import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Checkbox } from "@/components/ui/checkbox"
 import {
     Field,
@@ -18,6 +16,15 @@ import {
     FieldSet,
 } from "@/components/ui/field"
 import Tiptap from "@/components/Tiptap";
+  import {
+    Tabs,
+    TabsContent,
+    TabsList,
+    TabsTrigger,
+  } from "@/components/ui/tabs";
+import { Database } from "lucide-react";
+import { cn } from "@/lib/utils";
+// import Tiptap from "@/components/Tiptap";
 
 type select_option = {
     value: string,
@@ -51,10 +58,20 @@ export default function AddAd1(){
         {value: "zdalnie", label: "Zdalnie"}
     ];
 
+    const category_options: { id: string; label: string }[] = [
+        { id: "backend", label: "Backend" },
+        { id: "frontend", label: "Frontend" },
+        { id: "fullstack", label: "Fullstack" },
+        { id: "devops", label: "DevOps" },
+        { id: "mobile", label: "Mobile" },
+        { id: "data", label: "Data / AI" },
+    ];
+
     const [currentPage, setCurrentPage] = useState<number>(0);
     const [editorContent, setEditorContent] = useState('');
     const [recruitmentSteps, setRecruitmentSteps] = useState<string[]>(['']);
     const [salaryValues, setSalaryValues] = useState([0, 50000]);
+    const [selectedCategory, setSelectedCategory] = useState<string>("");
 
     const handleEditorChange = (content: string) => {
         setEditorContent(content);
@@ -79,31 +96,56 @@ export default function AddAd1(){
                 <section>
                     <div className="container">
                         <div className="grid grid-cols-12 gap-x-6">
-                            <div className="col-span-full md:col-span-9 mb-4">
+                            <div className="col-span-full lg:col-span-8 mb-4">
                                 <h1 className="h2 mt-4">Dodaj ogłoszenie</h1>
                             </div> 
 
-                            <div className="col-span-full md:col-span-8">
+                            <div className="col-span-full lg:col-span-8">
                                 <form action="">
                                     <div className="mb-4">
-                                        {/* <h2 className="h5">Kategoria</h2> */}
+                                        <p className="w-full mb-2 block text-black">Kategoria</p>
 
-                                        <div className="">
-                                            <label className="w-full mb-2 block text-black">Kategoria</label>
-                                            <RadioGroup defaultValue="option-one">
-                                                <div className="flex items-center gap-3">
-                                                    <RadioGroupItem value="javascript" id="javascript" />
-                                                    <Label htmlFor="javascript" className="text-base">Javascript</Label>
-                                                </div>
-                                                <div className="flex items-center gap-3">
-                                                    <RadioGroupItem value="java" id="java" />
-                                                    <Label htmlFor="java" className="text-base">Java</Label>
-                                                </div>
-                                                <div className="flex items-center gap-3">
-                                                    <RadioGroupItem value="python" id="python" />
-                                                    <Label htmlFor="python" className="text-base">Python</Label>
-                                                </div>
-                                            </RadioGroup>
+                                        <div
+                                            className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 gap-3 mb-8"
+                                            role="radiogroup"
+                                            aria-label="Kategoria"
+                                        >
+                                            {category_options.map(({ id, label }) => {
+                                                const selected = selectedCategory === id;
+                                                return (
+                                                    <div
+                                                        key={id}
+                                                        className={cn(
+                                                            "flex relative w-full items-center gap-3 border-2 border-grey-500 transition-colors",
+                                                            selected && "border-black"
+                                                        )}
+                                                    >
+                                                        <label
+                                                            htmlFor={`category-${id}`}
+                                                            className="block w-full hover:cursor-pointer"
+                                                        >
+
+                                                            <input
+                                                                type="radio"
+                                                                name="category"
+                                                                value={id}
+                                                                id={`category-${id}`}
+                                                                checked={selected}
+                                                                onChange={() => setSelectedCategory(id)}
+                                                                className={cn(
+                                                                    "h-4 w-4 shrink-0 cursor-pointer absolute top-2 right-2"
+                                                                )}
+                                                            />
+
+                                                            <div className="px-2 py-2">
+                                                                <Database className="w-6 h-6" />
+                                                            </div>
+                                                        
+                                                            <span className="py-2 px-2 block">{label}</span>
+                                                        </label>
+                                                    </div>
+                                                );
+                                            })}
                                         </div>
                                     </div>
 
@@ -217,9 +259,9 @@ export default function AddAd1(){
 
                                         <div className="mb-3">
                                             <label className="w-full mb-2 block text-black">Wynagrodzenie</label>
-                                            <input type="text" className="border border-2 border-black py-[.625rem] px-3 focus:outline-none focus:border-black" placeholder="Od" onChange={() => {}} />
+                                            <input type="text" className="border border-2 border-black py-[.625rem] px-3 focus:outline-none focus:border-black w-40" placeholder="Od" onChange={() => {}} />
                                             <span className="inline-block px-4">-</span>
-                                            <input type="text" className="border border-2 border-black py-[.625rem] px-3 focus:outline-none focus:border-black" placeholder="Do" onChange={() => {}} />
+                                            <input type="text" className="border border-2 border-black py-[.625rem] px-3 focus:outline-none focus:border-black w-40" placeholder="Do" onChange={() => {}} />
                                         </div>
 
                                         <div className="mb-3">
