@@ -57,7 +57,7 @@ p{
 }
 
 // List
-ul{
+ul.list-1{
   margin-bottom: 16px;
 
   li{
@@ -111,7 +111,7 @@ ul{
   margin-top: 8px;
 
   li{
-    margin-bottom: 24px;
+    margin-bottom: 16px;
   }
 
   li:before{
@@ -123,7 +123,8 @@ ul{
 .btn{
   display: inline-block;
   text-align: center;
-  padding: 8px 12px;
+  padding: 10px 12px;
+  min-width: 128px;
   // border-radius: 12px;
 
   img{
@@ -147,7 +148,6 @@ ul{
     border: 2px solid #000;
     color: #000;
     // font-weight: 700;
-    border-radius: 8px;
     background: none;
   }
 }
@@ -173,7 +173,19 @@ ul{
 }
 
 .css-hlgwow{
-  padding: 6px 8px !important;
+  padding: 4px 8px !important;
+}
+
+.select__control .select__indicators .select__indicator-separator{
+  display: none;
+}
+
+.select__control .select__indicator svg{
+  color: #b6b6b6;
+}
+
+.select__menu{
+  border-radius: 0 !important;
 }
 
 
@@ -412,5 +424,19 @@ input[type="radio"]:checked:before {
     border: none;
     border-top: 1px solid var(--gray-2);
     margin: 2rem 0;
+  }
+}
+
+.tiptap-menu{
+  button{
+    > svg{
+      color: #939393;
+    }
+  }
+
+  .is-active{
+    > svg{
+      color: #000;
+    }
   }
 }

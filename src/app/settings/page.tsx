@@ -41,38 +41,38 @@ export default function Settings(){
                                 <div className="grid grid-cols-12 gap-x-6">
                                     <div className="col-span-full mb-3">
                                         <label className="w-full mb-2 block text-black">Nazwa firmy</label>
-                                        <input type="text" className="w-full border border-2 border-black py-[.625rem] px-3 focus:outline-none focus:border-black" placeholder="" />
+                                        <input type="text" className="w-full border border-2 border-black py-2 px-3 focus:outline-none focus:border-black" placeholder="" />
                                     </div>
                                     <div className="col-span-full md:col-span-6 mb-3">
                                         <label className="w-full mb-2 block text-black">Imię</label>
-                                        <input type="text" className="w-full border border-2 border-black py-[.625rem] px-3 focus:outline-none focus:border-black" placeholder="" />
+                                        <input type="text" className="w-full border border-2 border-black py-2 px-3 focus:outline-none focus:border-black" placeholder="" />
                                     </div>
                                     <div className="col-span-full md:col-span-6 mb-3">
                                         <label className="w-full mb-2 block text-black">Nazwisko</label>
-                                        <input type="text" className="w-full border border-2 border-black py-[.625rem] px-3 focus:outline-none focus:border-black" placeholder="" />
+                                        <input type="text" className="w-full border border-2 border-black py-2 px-3 focus:outline-none focus:border-black" placeholder="" />
                                     </div>
                                     <div className="col-span-full mb-3">
                                         <label className="w-full mb-2 block text-black">Adres siedziby</label>
-                                        <input type="text" className="w-full border border-2 border-black py-[.625rem] px-3 focus:outline-none focus:border-black" placeholder="" />
+                                        <input type="text" className="w-full border border-2 border-black py-2 px-3 focus:outline-none focus:border-black" placeholder="" />
                                     </div>
                                     <div className="col-span-full md:col-span-3 mb-3">
                                         <label className="w-full mb-2 block text-black">Kod pocztowy</label>
-                                        <input type="number" className="w-full border border-2 border-black py-[.625rem] px-3 focus:outline-none focus:border-black" placeholder="" />
+                                        <input type="number" className="w-full border border-2 border-black py-2 px-3 focus:outline-none focus:border-black" placeholder="" />
                                     </div>
                                     <div className="col-span-full md:col-span-9 mb-3">
                                         <label className="w-full mb-2 block text-black">Miejscowość</label>
-                                        <input type="text" className="w-full border border-2 border-black py-[.625rem] px-3 focus:outline-none focus:border-black" placeholder="" />
+                                        <input type="text" className="w-full border border-2 border-black py-2 px-3 focus:outline-none focus:border-black" placeholder="" />
                                     </div>
                                     <div className="col-span-full md:col-span-6 mb-3">
                                         <label className="w-full mb-2 block text-black">NIP</label>
-                                        <input type="number" className="w-full border border-2 border-black py-[.625rem] px-3 focus:outline-none focus:border-black" placeholder="" />
+                                        <input type="number" className="w-full border border-2 border-black py-2 px-3 focus:outline-none focus:border-black" placeholder="" />
                                     </div>
                                     <div className="col-span-full md:col-span-6 mb-3">
                                         <label className="w-full mb-2 block text-black">REGON</label>
-                                        <input type="number" className="w-full border border-2 border-black py-[.625rem] px-3 focus:outline-none focus:border-black" placeholder="" />
+                                        <input type="number" className="w-full border border-2 border-black py-2 px-3 focus:outline-none focus:border-black" placeholder="" />
                                     </div>
                                     <div className="col-span-full mt-4">
-                                        <button className="bg-black text-white py-3 px-8 font-semibold" type="submit">Zapisz</button>
+                                        <button className="btn btn-primary" type="submit">Zapisz</button>
                                     </div>
                                 </div>
                             </form>
@@ -83,18 +83,18 @@ export default function Settings(){
                             <form action="">
                                 <div className="mb-3">
                                     <label className="w-full mb-2 block text-black">Aktualne hasło</label>
-                                    <input className="w-full border border-2 border-black py-[.625rem] px-3 focus:outline-none focus:border-black" placeholder="" />
+                                    <input className="w-full border border-2 border-black py-2 px-3 focus:outline-none focus:border-black" placeholder="" />
                                 </div>
                                 <div className="mb-3">
                                     <label className="w-full mb-2 block text-black">Nowe hasło</label>
-                                    <input className="w-full border border-2 border-black py-[.625rem] px-3 focus:outline-none focus:border-black" placeholder="" />
+                                    <input className="w-full border border-2 border-black py-2 px-3 focus:outline-none focus:border-black" placeholder="" />
                                 </div>
                                 <div className="mb-3">
                                     <label className="w-full mb-2 block text-black">Powtórz hasło</label>
-                                    <input className="w-full border border-2 border-black py-[.625rem] px-3 focus:outline-none focus:border-black" placeholder="" />
+                                    <input className="w-full border border-2 border-black py-2 px-3 focus:outline-none focus:border-black" placeholder="" />
                                 </div>
                                 <div className="col-span-full mt-4">
-                                    <button className="bg-black text-white py-3 px-8 font-semibold" type="submit">Zmień hasło</button>
+                                    <button className="btn btn-primary" type="submit">Zmień hasło</button>
                                 </div>
                             </form>
                         </section>
@@ -104,7 +104,7 @@ export default function Settings(){
                         <section className="mb-12">
                             <h2 className="h5">Usuwanie konta</h2>
                             <p className="mb-8">Jeżeli podjąłeś decyzję ze chcesz usunąć konto w JobJob, możesz to zrobić klikając w przycisk poniżej. Wszystkie dane zostaną usunięte.</p>
-                            <button className="border border-2 border-error-500 text-error-500 py-2 px-6 font-semibold text-[15px]">Usuń konto</button>
+                            <button className="border border-2 border-error-500 text-error-500 py-2 px-6 font-semibold">Usuń konto</button>
                         </section>
                     </main> 
                 </div>

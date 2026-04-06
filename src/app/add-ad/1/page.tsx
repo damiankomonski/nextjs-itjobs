@@ -1,35 +1,18 @@
 "use client"
 
-import Link from "next/link";
-import { useEffect, useState } from "react";
-import Select from "react-select";
-
+import { useState } from "react";
 import Header from "@/components/Header";
-import { Input } from "@/components/ui/input";
-import { Checkbox } from "@/components/ui/checkbox"
-import {
-    Field,
-    FieldDescription,
-    FieldGroup,
-    FieldLabel,
-    FieldLegend,
-    FieldSet,
-} from "@/components/ui/field"
 import Tiptap from "@/components/Tiptap";
-  import {
-    Tabs,
-    TabsContent,
-    TabsList,
-    TabsTrigger,
-  } from "@/components/ui/tabs";
-import { Database } from "lucide-react";
+import { Database, Plus } from "lucide-react";
 import { cn } from "@/lib/utils";
-// import Tiptap from "@/components/Tiptap";
+import Select from 'react-select';
 
 type select_option = {
     value: string,
     label: string
 }
+
+// Dodać 
 
 export default function AddAd1(){
     const cities: select_option[] = [
@@ -96,11 +79,11 @@ export default function AddAd1(){
                 <section>
                     <div className="container">
                         <div className="grid grid-cols-12 gap-x-6">
-                            <div className="col-span-full lg:col-span-8 mb-4">
+                            <div className="col-span-full lg:col-span-8 lg:col-start-3 mb-4">
                                 <h1 className="h2 mt-4">Dodaj ogłoszenie</h1>
                             </div> 
 
-                            <div className="col-span-full lg:col-span-8">
+                            <div className="col-span-full lg:col-span-8 lg:col-start-3">
                                 <form action="">
                                     <div className="mb-4">
                                         <p className="w-full mb-2 block text-black">Kategoria</p>
@@ -150,17 +133,15 @@ export default function AddAd1(){
                                     </div>
 
                                     <div className="mb-3">
-                                        {/* <h2 className="h5">Dane</h2> */}
-
                                         <div className="mb-3">
                                             <label className="w-full mb-2 block text-black">Nazwa stanowiska</label>
-                                            <input type="text" className="w-full border border-2 border-black py-[.625rem] px-3 focus:outline-none focus:border-black" placeholder="Nazwa stanowiska" onChange={() => {}} />
+                                            <input type="text" className="w-full border border-2 border-black py-2 px-3 focus:outline-none focus:border-black" placeholder="Nazwa stanowiska" onChange={() => {}} />
                                         </div>
 
                                         <div className="mb-3">
                                             <label className="w-full mb-2 block text-black">Lokalizacja</label>
                                             <Select
-                                                className="focus:outline-none focus:border-black"
+                                                className="react-select-height focus:outline-none focus:border-black"
                                                 classNamePrefix="select"
                                                 isMulti
                                                 isClearable
@@ -182,21 +163,6 @@ export default function AddAd1(){
                                                 name="wymiar_pracy"
                                                 options={wymiar_pracy_options}
                                             />
-{/* 
-                                            <RadioGroup defaultValue="option-one">
-                                                <div className="flex items-center gap-3">
-                                                    <RadioGroupItem value="pelny-etat" id="pelny-etat" />
-                                                    <Label htmlFor="pelny-etat" className="text-base">Pełny etat</Label>
-                                                </div>
-                                                <div className="flex items-center gap-3">
-                                                    <RadioGroupItem value="pol-etatu" id="pol-etatu" />
-                                                    <Label htmlFor="pol-etatu" className="text-base">Pół etatu</Label>
-                                                </div>
-                                                <div className="flex items-center gap-3">
-                                                    <RadioGroupItem value="freelance" id="freelance" />
-                                                    <Label htmlFor="freelance" className="text-base">Freelance</Label>
-                                                </div>
-                                            </RadioGroup> */}
                                         </div>
 
                                         <div className="mb-3">
@@ -225,22 +191,6 @@ export default function AddAd1(){
                                                 name="rodzaj_umowy"
                                                 options={rodzaj_umowy_options}
                                             />
-                                            {/* <FieldGroup className="gap-3">
-                                                <Field orientation="horizontal">
-                                                    <Checkbox id="umowa-o-prace" name="umowa-o-prace" />
-                                                    <FieldLabel htmlFor="umowa-o-prace" className="font-normal">Umowa o pracę</FieldLabel>
-                                                </Field>
-                                                
-                                                <Field orientation="horizontal">
-                                                    <Checkbox id="b2b" name="b2b" />
-                                                    <FieldLabel htmlFor="b2b" className="font-normal">B2B</FieldLabel>
-                                                </Field>
-
-                                                <Field orientation="horizontal">
-                                                    <Checkbox id="umowa-zlecenie" name="umowa-zlecenie" />
-                                                    <FieldLabel htmlFor="umowa-zlecenie" className="font-normal">Umowa zlecenie</FieldLabel>
-                                                </Field>
-                                            </FieldGroup> */}
                                         </div>
 
                                         <div className="mb-3">
@@ -259,9 +209,9 @@ export default function AddAd1(){
 
                                         <div className="mb-3">
                                             <label className="w-full mb-2 block text-black">Wynagrodzenie</label>
-                                            <input type="text" className="border border-2 border-black py-[.625rem] px-3 focus:outline-none focus:border-black w-40" placeholder="Od" onChange={() => {}} />
+                                            <input type="text" className="border border-2 border-black py-2 px-3 focus:outline-none focus:border-black w-40" placeholder="Od" onChange={() => {}} />
                                             <span className="inline-block px-4">-</span>
-                                            <input type="text" className="border border-2 border-black py-[.625rem] px-3 focus:outline-none focus:border-black w-40" placeholder="Do" onChange={() => {}} />
+                                            <input type="text" className="border border-2 border-black py-2 px-3 focus:outline-none focus:border-black w-40" placeholder="Do" onChange={() => {}} />
                                         </div>
 
                                         <div className="mb-3">
@@ -290,7 +240,7 @@ export default function AddAd1(){
                                                     <input
                                                         key={index}
                                                         type="text"
-                                                        className="w-full border border-2 border-black py-[.625rem] px-3 focus:outline-none focus:border-black"
+                                                        className="w-full border border-2 border-black py-2 px-3 focus:outline-none focus:border-black"
                                                         placeholder={`Krok ${index + 1}`}
                                                         value={step}
                                                         onChange={(e) =>
@@ -302,14 +252,15 @@ export default function AddAd1(){
                                             <button
                                                 type="button"
                                                 onClick={handleAddRecruitmentStep}
-                                                className="mt-2 inline-flex items-center px-4 py-2 border border-black text-sm font-medium bg-white hover:bg-gray-100 transition-colors"
+                                                className="mt-4 font-bold text-black flex items-center"
                                             >
+                                                <Plus className="mr-2" />
                                                 Dodaj kolejny krok
                                             </button>
                                         </div>
                                     </div>
 
-                                    <div className="mt-8">
+                                    <div className="my-8">
                                         <button type="submit" className="btn btn-primary">Dodaj ogłoszenie</button>
                                     </div>
                                 </form>

@@ -80,7 +80,7 @@ export default function MyProfile(){
                                 <form action="">
                                     <div className="mb-3">
                                         <label className="w-full mb-2 block text-black">Nazwa firmy</label>
-                                        <input type="text" className="w-full border border-2 border-black py-[.625rem] px-3 focus:outline-none focus:border-black" placeholder="" value="Allegro" onChange={() => {}} />
+                                        <input type="text" className="w-full border border-2 border-black py-2 px-3 focus:outline-none focus:border-black" placeholder="" value="Allegro" onChange={() => {}} />
                                     </div>
                                     <div className="mb-3">
                                         <label className="w-full mb-2 block text-black">Miejscowość</label>

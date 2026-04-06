@@ -13,14 +13,14 @@ import {ChevronDown} from "lucide-react";
 
 export default function Header() {
   return (
-    <header className="py-2 mb-6">
+    <header className="py-2">
         <div className="container grid grid-cols-12 gap-x-6">
             <div className="col-span-6 lg:col-span-8">
-                <Link href="/" className="mt-3 inline-block me-8 font-semibold">IT</Link>
+                <Link href="/" className="mt-3 inline-block me-8 font-semibold text-black">JustJoin Clone</Link>
                 <nav className="inline-block mt-3">
                   <ul>
-                    <li className="inline-block before:hidden"><Link href="/faq" className="mx-6">Cennik</Link></li>
-                    <li className="inline-block before:hidden"><Link href="/faq" className="mx-6">Artykuły</Link></li>
+                    <li className="inline-block before:hidden pl-0"><Link href="/faq" className="mx-4">Cennik</Link></li>
+                    <li className="inline-block before:hidden pl-0"><Link href="/faq" className="mx-4">Artykuły</Link></li>
                   </ul>
                 </nav>
             </div>
