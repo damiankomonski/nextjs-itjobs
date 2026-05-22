@@ -9,25 +9,25 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import {ChevronDown} from "lucide-react";
-
+import HeaderMobileNav from "./HeaderMobileNav";
 
 export default function Header() {
   return (
-    <header className="py-2">
+    <header className="py-2 mb-4">
         <div className="container grid grid-cols-12 gap-x-6">
             <div className="col-span-6 lg:col-span-8">
-                <Link href="/" className="mt-3 inline-block me-8 font-semibold text-black">JustJoin Clone</Link>
-                <nav className="inline-block mt-3">
+                <Link href="/" className="mt-6 inline-block me-8 font-semibold text-black">React Ads</Link>
+                <nav className="hidden md:inline-block mt-3">
                   <ul>
                     <li className="inline-block before:hidden pl-0"><Link href="/faq" className="mx-4">Cennik</Link></li>
                     <li className="inline-block before:hidden pl-0"><Link href="/faq" className="mx-4">Artykuły</Link></li>
                   </ul>
                 </nav>
             </div>
-            <div className="col-span-4">
+            <div className="col-span-6 lg:col-span-4">
               <div className="flex justify-end w-full">
                 <DropdownMenu>
-                  <DropdownMenuTrigger className="me-4">Twoje konto <ChevronDown className="inline-block h-[20px]" /></DropdownMenuTrigger>
+                  <DropdownMenuTrigger className="hidden md:inline-block me-4">Twoje konto <ChevronDown className="inline-block h-[20px]" /></DropdownMenuTrigger>
                   <DropdownMenuContent>
                     <DropdownMenuItem className="!text-base"><Link href="/my-ads" className="w-full">Moje ogłoszenia</Link></DropdownMenuItem>
                     <DropdownMenuItem className="!text-base"><Link href="/my-profile" className="w-full">Profil</Link></DropdownMenuItem>
@@ -35,8 +35,10 @@ export default function Header() {
                     <DropdownMenuItem className="!text-base"><Link href="/settings" className="w-full">Ustawienia</Link></DropdownMenuItem>
                   </DropdownMenuContent>
                 </DropdownMenu>
+
+                <HeaderMobileNav />
                 {/* <Link href="/login" className="me-4 mt-3">Zaloguj się</Link> */}
-                <Link href="/add-ad/1" className="btn btn-primary">Dodaj ogłoszenie</Link>
+                <Link href="/add-ad/1" className="!hidden md:inline-block btn btn-primary ">Dodaj ogłoszenie</Link>
               </div>
             </div>
         </div>

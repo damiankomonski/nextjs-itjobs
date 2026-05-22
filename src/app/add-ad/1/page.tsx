@@ -138,80 +138,95 @@ export default function AddAd1(){
                                             <input type="text" className="w-full border border-2 border-black py-2 px-3 focus:outline-none focus:border-black" placeholder="Nazwa stanowiska" onChange={() => {}} />
                                         </div>
 
-                                        <div className="mb-3">
-                                            <label className="w-full mb-2 block text-black">Lokalizacja</label>
-                                            <Select
-                                                className="react-select-height focus:outline-none focus:border-black"
-                                                classNamePrefix="select"
-                                                isMulti
-                                                isClearable
-                                                isSearchable
-                                                placeholder={"Lokalizacja"}
-                                                name="city_id"
-                                                options={cities}
-                                            />
+                                        <div className="md:mb-3 grid grid-cols-1 md:grid-cols-2 gap-x-6">
+                                            <div className="mb-3 md:mb-0">
+                                                <label className="w-full mb-2 block text-black">Lokalizacja</label>
+                                                <Select
+                                                    className="react-select-height focus:outline-none focus:border-black"
+                                                    classNamePrefix="select"
+                                                    isMulti
+                                                    isClearable
+                                                    isSearchable
+                                                    placeholder={"Lokalizacja"}
+                                                    name="city_id"
+                                                    options={cities}
+                                                />
+                                            </div>
+                                            <div className="mb-3 md:mb-0">
+                                                <label className="w-full mb-2 block text-black">Wymiar pracy</label>
+                                                <Select
+                                                    className="focus:outline-none focus:border-black"
+                                                    classNamePrefix="select"
+                                                    isClearable
+                                                    isSearchable
+                                                    placeholder={"Wymiary pracy"}
+                                                    name="wymiar_pracy"
+                                                    options={wymiar_pracy_options}
+                                                />
+                                            </div>
                                         </div>
 
-                                        <div className="mb-3">
-                                            <label className="w-full mb-2 block text-black">Wymiar pracy</label>
-                                            <Select
-                                                className="focus:outline-none focus:border-black"
-                                                classNamePrefix="select"
-                                                isClearable
-                                                isSearchable
-                                                placeholder={"Wymiary pracy"}
-                                                name="wymiar_pracy"
-                                                options={wymiar_pracy_options}
-                                            />
+                                        <div className="md:mb-3 grid grid-cols-1 md:grid-cols-2 gap-x-6">
+                                            <div className="mb-3 md:mb-0">
+                                                <label className="w-full mb-2 block text-black">Doświadczenie</label>
+                                                <Select
+                                                    className="focus:outline-none focus:border-black"
+                                                    classNamePrefix="select"
+                                                    isMulti
+                                                    isClearable
+                                                    isSearchable
+                                                    placeholder={"Doświadczenie"}
+                                                    name="experience_id"
+                                                    options={experience_options}
+                                                />
+                                            </div>
+                                            <div className="mb-3 md:mb-0">
+                                                <label className="w-full mb-2 block text-black">Rodzaj umowy</label>
+                                                <Select
+                                                    className="focus:outline-none focus:border-black"
+                                                    classNamePrefix="select"
+                                                    isMulti
+                                                    isClearable
+                                                    isSearchable
+                                                    placeholder={"Rodzaj umowy"}
+                                                    name="rodzaj_umowy"
+                                                    options={rodzaj_umowy_options}
+                                                />
+                                            </div>
                                         </div>
 
-                                        <div className="mb-3">
-                                            <label className="w-full mb-2 block text-black">Doświadczenie</label>
-                                            <Select
-                                                className="focus:outline-none focus:border-black"
-                                                classNamePrefix="select"
-                                                isMulti
-                                                isClearable
-                                                isSearchable
-                                                placeholder={"Doświadczenie"}
-                                                name="experience_id"
-                                                options={experience_options}
-                                            />
-                                        </div>
+                                        <div className="md:mb-3 grid grid-cols-1 md:grid-cols-2 gap-x-6">
+                                            <div className="mb-3 md:mb-0">
+                                                <label className="w-full mb-2 block text-black">Miejsce pracy</label>
+                                                <Select
+                                                    className="focus:outline-none focus:border-black"
+                                                    classNamePrefix="select"
+                                                    isMulti
+                                                    isClearable
+                                                    isSearchable
+                                                    placeholder={"Miejsce pracy"}
+                                                    name="miejsce_pracy"
+                                                    options={miejsce_pracy_options}
+                                                />
+                                            </div>
+                                            
+                                            <div className="mb-3 md:mb-0">
+                                                <label className="w-full mb-2 block text-black">Wynagrodzenie</label>
 
-                                        <div className="mb-3">
-                                            <label className="w-full mb-2 block text-black">Rodzaj umowy</label>
-                                            <Select
-                                                className="focus:outline-none focus:border-black"
-                                                classNamePrefix="select"
-                                                isMulti
-                                                isClearable
-                                                isSearchable
-                                                placeholder={"Rodzaj umowy"}
-                                                name="rodzaj_umowy"
-                                                options={rodzaj_umowy_options}
-                                            />
-                                        </div>
+                                                <div className="flex items-center gap-3">
+                                                    <div className="relative min-w-0 w-full">
+                                                        <input type="text" className="w-full border border-2 border-black py-2 pl-3 pr-7 focus:outline-none focus:border-black" placeholder="Od" onChange={() => {}} />
+                                                        <span className="absolute right-3 top-1/2 -translate-y-1/2">zł</span>
+                                                    </div>
+                                                    <span>-</span>
+                                                    <div className="relative min-w-0 w-full">
+                                                        <input type="text" className="w-full border border-2 border-black py-2 pl-3 pr-7 focus:outline-none focus:border-black" placeholder="Do" onChange={() => {}} />
+                                                        <span className="absolute right-3 top-1/2 -translate-y-1/2">zł</span>
+                                                    </div>
+                                                </div>
 
-                                        <div className="mb-3">
-                                            <label className="w-full mb-2 block text-black">Miejsce pracy</label>
-                                            <Select
-                                                className="focus:outline-none focus:border-black"
-                                                classNamePrefix="select"
-                                                isMulti
-                                                isClearable
-                                                isSearchable
-                                                placeholder={"Miejsce pracy"}
-                                                name="miejsce_pracy"
-                                                options={miejsce_pracy_options}
-                                            />
-                                        </div>
-
-                                        <div className="mb-3">
-                                            <label className="w-full mb-2 block text-black">Wynagrodzenie</label>
-                                            <input type="text" className="border border-2 border-black py-2 px-3 focus:outline-none focus:border-black w-40" placeholder="Od" onChange={() => {}} />
-                                            <span className="inline-block px-4">-</span>
-                                            <input type="text" className="border border-2 border-black py-2 px-3 focus:outline-none focus:border-black w-40" placeholder="Do" onChange={() => {}} />
+                                                <span className="text-sm text-grey-500 mt-2 block">Podaj wynagrodzenie miesięczne brutto.</span>
+                                            </div>
                                         </div>
 
                                         <div className="mb-3">
@@ -249,14 +264,8 @@ export default function AddAd1(){
                                                     />
                                                 ))}
                                             </div>
-                                            <button
-                                                type="button"
-                                                onClick={handleAddRecruitmentStep}
-                                                className="mt-4 font-bold text-black flex items-center"
-                                            >
-                                                <Plus className="mr-2" />
-                                                Dodaj kolejny krok
-                                            </button>
+
+                                            <button type="button" onClick={handleAddRecruitmentStep} className="mt-4 font-bold text-black flex items-center"><Plus className="mr-2" /> Dodaj krok</button>
                                         </div>
                                     </div>
 
