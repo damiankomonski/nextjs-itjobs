@@ -332,6 +332,19 @@ input[type="radio"]:checked:before {
   transform: scale(1);
 }
 
+// react-dropzone
+.dropzone{
+  border: 2px dashed #949494;
+  border-radius: 0;
+  padding: 48px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.dropzone p {
+  margin-bottom: 0;
+  color: gray;
+}
 
 // Tiptap
 /* Basic editor styles */

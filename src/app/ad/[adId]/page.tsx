@@ -1,10 +1,9 @@
 "use client"
 
-import React, {useCallback} from "react";
-import Link from "next/link";
-import {useDropzone} from 'react-dropzone'
+import React from "react";
 import Header from "@/components/Header";
 import Dropzone from "@/components/Dropzone";
+import {Building2, MapPin} from "lucide-react";
 
 type ParamsType = {
     adId: string
@@ -28,12 +27,12 @@ export default function Page({params}: {params: Promise<ParamsType>}){
                         <div className="col-span-full md:col-span-8 md:col-start-3 mt-6">
                             <h1 className="h3">Front End Engineer</h1>
                             <div className="flex">
-                                <div className="me-6">
-                                    <img src={undefined} alt="" />
+                                <div className="me-6 flex items-center gap-2">
+                                    <MapPin className="w-6 h-6 -mt-4" />
                                     <p>Warszawa</p>
                                 </div>
-                                <div className="me-6">
-                                    <img src={undefined} alt="" />
+                                <div className="me-6 flex items-center gap-2">
+                                    <Building2 className="w-6 h-6 -mt-4" />
                                     <p>Allegro</p>
                                 </div>
                             </div>

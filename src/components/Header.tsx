@@ -27,7 +27,7 @@ export default function Header() {
             <div className="col-span-6 lg:col-span-4">
               <div className="flex justify-end w-full">
                 <DropdownMenu>
-                  <DropdownMenuTrigger className="hidden md:inline-block me-4">Twoje konto <ChevronDown className="inline-block h-[20px]" /></DropdownMenuTrigger>
+                  <DropdownMenuTrigger className="hidden md:inline-block me-4 mt-3">Twoje konto <ChevronDown className="inline-block h-[20px]" /></DropdownMenuTrigger>
                   <DropdownMenuContent>
                     <DropdownMenuItem className="!text-base"><Link href="/my-ads" className="w-full">Moje ogłoszenia</Link></DropdownMenuItem>
                     <DropdownMenuItem className="!text-base"><Link href="/my-profile" className="w-full">Profil</Link></DropdownMenuItem>
@@ -38,7 +38,7 @@ export default function Header() {
 
                 <HeaderMobileNav />
                 {/* <Link href="/login" className="me-4 mt-3">Zaloguj się</Link> */}
-                <Link href="/add-ad/1" className="!hidden md:inline-block btn btn-primary ">Dodaj ogłoszenie</Link>
+                <Link href="/add-ad/1" className="hidden md:inline-block btn btn-primary mt-3">Dodaj ogłoszenie</Link>
               </div>
             </div>
         </div>
