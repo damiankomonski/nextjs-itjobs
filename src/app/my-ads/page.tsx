@@ -35,7 +35,7 @@ export default function MyAds(){
                                         <TabsTrigger value="unactive" className="text-base">Nieaktywne (0)</TabsTrigger>
                                     </TabsList>
                                     <TabsContent value="active">
-                                        <article className="border border-1 border-gray-100 rounded-lg py-4 px-6 w-full relative mb-4">
+                                        <article className="border border-2 border-gray-100 rounded-lg py-4 px-6 w-full relative mb-4">
                                             <div className="flex justify-between">
                                                 <div>
                                                     <h2 className="h4 !mb-2"><Link href="/my-ads/asj239857sjfdh">Front End Engineer</Link></h2>

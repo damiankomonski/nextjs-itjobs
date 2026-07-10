@@ -31,7 +31,6 @@ export default function AddAd2(){
                                         <div className="flex-1">
                                             <div className={cn("flex relative w-full items-center gap-3 border-2 border-grey-500 transition-colors")}>
                                                 <label htmlFor={`category-1`} className="block w-full hover:cursor-pointer">
-
                                                     <input
                                                         type="radio"
                                                         name="category"
@@ -42,6 +41,7 @@ export default function AddAd2(){
                                                             "h-4 w-4 shrink-0 cursor-pointer absolute top-2 right-2"
                                                         )}
                                                     />
+                                                    
                                                     <div className="p-4">
                                                         <h3 className="text-2xl text-black mb-2">Pakiet Start</h3>
                                                         <p>Czas trwania 30 dni</p>
@@ -62,7 +62,6 @@ export default function AddAd2(){
                                         <div className="flex-1">
                                             <div className={cn("flex relative w-full items-center gap-3 border-2 border-grey-500 transition-colors")}>
                                                 <label htmlFor={`category-1`} className="block w-full hover:cursor-pointer">
-
                                                     <input
                                                         type="radio"
                                                         name="category"
@@ -73,6 +72,7 @@ export default function AddAd2(){
                                                             "h-4 w-4 shrink-0 cursor-pointer absolute top-2 right-2"
                                                         )}
                                                     />
+
                                                     <div className="p-4">
                                                         <h3 className="text-2xl text-black mb-2">Pakiet Premium</h3>
                                                         <p>Czas trwania 90 dni</p>
